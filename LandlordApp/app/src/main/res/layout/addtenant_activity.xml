@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.navigationuidemo2.TenantViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/fullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/unitNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unit Number"
+            app:layout_constraintTop_toBottomOf="@id/fullName" />
+
+        <EditText
+            android:id="@+id/fullRent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Monthly Rent"
+            app:layout_constraintTop_toBottomOf="@id/unitNumber" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Tenant"
+            app:layout_constraintTop_toBottomOf="@id/fullRent" />
+
+        <TextView
+            android:id="@+id/tvAddTenantInfo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:text="@{viewModel.capitalizedTenantInfo}"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/button" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            app:layout_constraintTop_toBottomOf="@id/tvAddTenantInfo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
